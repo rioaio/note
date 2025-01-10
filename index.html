@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivational Text</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .fade-group {
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        .fade-group:nth-child(1) { animation-delay: 0.5s; }
+        .fade-group:nth-child(2) { animation-delay: 3s; }
+        .fade-group:nth-child(3) { animation-delay: 5.5s; }
+
+        .red {
+            color: red;
+            animation: glowRed 2s infinite alternate;
+        }
+
+        .green {
+            color: #00FF00; /* Bright green */
+            animation: glowGreen 2s infinite alternate;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes glowRed {
+            0% {
+                text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red, 0 0 30px red;
+            }
+            100% {
+                text-shadow: 0 0 10px red, 0 0 20px red, 0 0 40px red, 0 0 50px red;
+            }
+        }
+
+        @keyframes glowGreen {
+            0% {
+                text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00;
+            }
+            100% {
+                text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 40px #00FF00, 0 0 50px #00FF00;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="fade-group">Don't be sad,</div>
+        <div class="fade-group">it's just a bad <span class="red">day</span>,</div>
+        <div class="fade-group">not a bad <span class="green">life</span>.</div>
+    </div>
+</body>
+</html>
